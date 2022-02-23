@@ -11,14 +11,10 @@ def balanced_paranthesis(output, opening, closing):
     # any time but closing brackets only when it is greater than opening otherwise it will not generate
     # valid combination.
     if opening:
-        opening -= 1
-        output += '('
-        balanced_paranthesis(output, opening-1, closing)
+        balanced_paranthesis(output+'(', opening-1, closing)
 
     if closing > opening:
-        closing -= 1
-        output += ')'
-        balanced_paranthesis(output, opening, closing-1)
+        balanced_paranthesis(output+')', opening, closing-1)
 
 n=3
 open_bracket = n
